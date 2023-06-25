@@ -8,10 +8,15 @@ public class Main {
             array[i] = getRandomNumber(-100, 100);
         }
         System.out.println("Стартовый массив:");        //Вывод стартового массива
+        System.out.println("Длина массива:"+ array.length);
         //for (int i : array) {
         //    System.out.print(i + " ");
         //}
         System.out.println();
+        List<Integer> list = new ArrayList<>();         //Перевод массива в лист
+        for (int i : array) {
+            list.add(i);
+        }
         long start1 = System.nanoTime();                //Начало сортировки выбором
         int[] result = sortingChoose(array, length);
         long finish1 = System.nanoTime();
@@ -21,16 +26,12 @@ public class Main {
         //    System.out.print(i + " ");
         //}
         System.out.println();
-        List<Integer> list = new ArrayList<>();         //Перевод массива в лист
-        for (int i : array) {
-            list.add(i);
-        }
         long start2 = System.nanoTime();                //Сортировка через Collections.sort() для сравнения
         Collections.sort(list);
         long finish2 = System.nanoTime();
         System.out.println("Время сортировки: " + (finish2-start2)/1000 + " мс");
         System.out.println("Сортированный лист:");
-        int listSize = list.size();
+        //int listSize = list.size();
         //for (int i=0; i <listSize; i++) {
         //    System.out.print(list.get(i)+ " ");
         //}
